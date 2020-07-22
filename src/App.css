@@ -12,11 +12,30 @@ body {
   padding: 20px;
 }
 
+.app__header>h1 {
+  color: #fc3c3c;
+  font-size: 2rem;
+}
+
+.app__dropdown {
+  background-color: white;
+}
+
 .app__left {
   flex: 0.9;
   /* this makes the left side use 90% of its space (for width) */
 }
 
+.app__right {
+  display: flex;
+  flex-direction: column;
+}
+
+.app__right .MuiCardContent-root {
+  flex-direction: column;
+  display: flex;
+  flex-grow: 1;
+}
 
 .app__header {
   display: flex;
@@ -28,6 +47,15 @@ body {
 .app__stats {
   display: flex;
   justify-content: space-between;
+}
+
+.app__graph {
+  flex-grow: 1;
+}
+
+.app__graphTitle {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 @media (max-width: 990px) {
