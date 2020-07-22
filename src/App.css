@@ -14,8 +14,9 @@ body {
 
 .app__left {
   flex: 0.9;
-  /* this makes the left side use 90% of the screen */
+  /* this makes the left side use 90% of its space (for width) */
 }
+
 
 .app__header {
   display: flex;
