@@ -34,3 +34,17 @@
     font-size: 0.8rem !important;
     margin-top: 15px !important;
 }
+
+@media (max-width: 650px) {
+    .infoBox__cases {
+        font-size: 15px;
+    }
+
+    .infoBox__title {
+        font-size: 13px !important;
+    }
+
+    .infoBox__total {
+        font-size: 14px !important;
+    }
+}
