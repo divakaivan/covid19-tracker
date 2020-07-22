@@ -1,0 +1,23 @@
+.table {
+    margin-top: 20px;
+    overflow: scroll;
+    height: 400px;
+    /* the scroll works with height, so that the item has 
+    fixed height and is scrollable inside itself */
+    color: #6a5d5d;
+    background-color: white;
+}
+
+.table tr {
+    display: flex;
+    justify-content: space-between;
+}
+
+.table td {
+    padding: 0.5rem;
+}
+
+.table tr:nth-of-type(odd) {
+    background-color: #f3f2f8;
+    /* this takes every other row of the table and makes the bc the grey-ish */
+}
