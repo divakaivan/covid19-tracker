@@ -3,7 +3,7 @@ import Leaflet from "leaflet";
 import { Map as LeafletMap, TileLayer } from "react-leaflet";
 
 import { showDataOnMap } from "./util";
-import "./Map.css";
+import "./styles/Map.css";
 
 function Map({ countries, casesType, center, zoom }) {
   const corner1 = Leaflet.latLng(-120, -240);

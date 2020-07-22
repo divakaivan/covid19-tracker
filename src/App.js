@@ -6,7 +6,7 @@ import {
   Card,
   CardContent,
 } from "@material-ui/core";
-import "./App.css";
+import "./styles/App.css";
 import InfoBox from "./InfoBox";
 import Map from "./Map";
 import Table from "./Table";

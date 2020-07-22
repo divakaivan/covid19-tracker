@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, CardContent, Typography } from "@material-ui/core";
 
-import "./InfoBox.css";
+import "./styles/InfoBox.css";
 
 function InfoBox({ active, isRed, title, cases, total, ...props }) {
   return (
