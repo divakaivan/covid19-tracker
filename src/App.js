@@ -69,7 +69,6 @@ const App = () => {
       .then((data) => {
         setCountry(countryCode);
         setCountryInfo(data);
-        console.log(data);
         countryCode !== "worldwide" &&
           setMapCenter([data.countryInfo.lat, data.countryInfo.long]);
         setMapZoom(4);
