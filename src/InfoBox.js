@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Card, CardContent, Typography } from "@material-ui/core";
 
 import "./styles/InfoBox.css";
@@ -25,5 +26,32 @@ function InfoBox({ active, isRed, title, cases, total, ...props }) {
     </Card>
   );
 }
+
+InfoBox.propTypes = {
+  /**
+   * When the specific InfoBox is active, additional css styling is added.
+   */
+  active: PropTypes.bool,
+  /**
+   * Signifies if the InfoBox component is for good/bad info and adds css if isRed.
+   */
+  isRed: PropTypes.bool,
+  /**
+   * Title of the InfoBox.
+   */
+  title: PropTypes.string.isRequired,
+  /**
+   * The number of cases for deaths/recovered/corona cases. (comes as str from the formatting)
+   */
+  cases: PropTypes.string.isRequired,
+  /**
+   * The number of total cases for deaths/recovered/corona cases. (comes as str from the formatting)
+   */
+  total: PropTypes.string.isRequired,
+  /**
+   * Functition to change the active InfoBox upon user click.
+   */
+  onClick: PropTypes.func.isRequired,
+};
 
 export default InfoBox;

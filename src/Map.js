@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Leaflet from "leaflet";
 import { Map as LeafletMap, TileLayer } from "react-leaflet";
 
@@ -27,5 +28,25 @@ function Map({ countries, casesType, center, zoom }) {
     </div>
   );
 }
+
+Map.propTypes = {
+  /**
+   * Data that comes from the api about all countries including - country name,
+   * cases, deaths and recovered(all needed for the map).
+   */
+  countries: PropTypes.array.isRequired,
+  /**
+   * Depending on the caseType, the circles on the map represent the maount of {caseType} in that country.
+   */
+  casesType: PropTypes.oneOf(["cases", "deaths", "recovered"]),
+  /**
+   * The coordinates where the map will be centered.
+   */
+  center: PropTypes.shape({ lat: PropTypes.number, lng: PropTypes.number }),
+  /**
+   * How zoomed the map will be.
+   */
+  zoom: PropTypes.number.isRequired,
+};
 
 export default Map;

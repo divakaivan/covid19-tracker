@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Line } from "react-chartjs-2";
 import numeral from "numeral";
 
+// custom options for the Graph component on the right-hand side.
 const options = {
   legend: {
     display: false,
@@ -46,6 +47,12 @@ const options = {
   },
 };
 
+/**
+ * Parses the data that comes from the api and creates in in a {x: date, y: number}.
+ *
+ * @param {object} data - Historical data coming from the disease.sh api for cases.
+ * @param {string} casesType - This is needed so the chart can change whenver the user clicks on either cases/deaths/recovered.
+ */
 const buildChartData = (data, casesType = "cases") => {
   let chartData = [];
   let lastDataPoint;
@@ -54,7 +61,7 @@ const buildChartData = (data, casesType = "cases") => {
     if (lastDataPoint) {
       let newDataPoint = {
         x: date,
-        y: data[casesType][date] - lastDataPoint,
+        y: data[casesType][date] - lastDataPoint, // gets the dif between the current and previous date for cases.
       };
       chartData.push(newDataPoint);
     }
@@ -66,6 +73,9 @@ const buildChartData = (data, casesType = "cases") => {
 function LineGraph({ casesType = "cases", ...props }) {
   const [data, setData] = useState({});
 
+  /**
+   * Fetch data for the last 120 days from the api. Contains data for cases/deaths/recovered.
+   */
   useEffect(() => {
     const fetchData = async () => {
       await fetch("https://disease.sh/v3/covid-19/historical/all?lastdays=120")

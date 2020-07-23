@@ -31,8 +31,8 @@ export const sortData = (data) => {
 };
 
 // draw circles on the map
-export const showDataOnMap = (data, casesType = "cases") =>
-  data.map((country, id) => (
+export const showDataOnMap = (countries, casesType = "cases") =>
+  countries.map((country, id) => (
     <Circle
       key={id}
       center={[country.countryInfo.lat, country.countryInfo.long]}
